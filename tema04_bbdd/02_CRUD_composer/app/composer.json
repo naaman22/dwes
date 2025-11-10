@@ -1,0 +1,17 @@
+{
+    "name": "alumnos-daw/app",
+    "description": "CRUD usuarios",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "AlumnosDaw\\App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "naaman22",
+            "email": "2866006@alu.murciaeduca.es"
+        }
+    ],
+    "require": {}
+}

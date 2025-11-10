@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>form_01</title>
+</head>
+
+<style>
+    
+body {
+    margin: 20px;
+    background-color: lightblue;
+    font-family: sans-serif;
+}
+
+main{
+    width: 500px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.5em;
+}
+
+hr{
+    border: 1px solid black;
+}
+</style>
+
+<body>
+  <h1>####################Incompleto####################</h1>
+  <header>
+    <h1>Formulario 01</h1>
+  </header>
+  <main>
+    
+    <form action="datos.php" method="get">
+        <fieldset>
+          <legend>Envio tipo GET</legend>  
+          <p>
+            <!-- al usar <label> y que coincida con el id del <input> correspondiente, permite que al hacer click 
+            en el texto del <label>, el cursor se coloque directamente en el campo asociado -->
+            Nombre: <input type="text" name="nombre" size="40" required>
+          </p>
+          <p>
+            Edad: <input type="number" name="edad" min="0" required>
+          </p>
+        </fieldset>
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Borrar">
+        </p>
+    </form>
+
+    <form action="datos.php" method="post">
+        <fieldset>
+          <legend>Envio tipo POST</legend>  
+          <p>
+            <!-- al usar <label> y que coincida con el id del <input> correspondiente, permite que al hacer click 
+            en el texto del <label>, el cursor se coloque directamente en el campo asociado -->
+            Nombre: <input type="text" name="nombre" size="40" required>
+          </p>
+          <p>
+            Edad: <input type="number" name="edad" min="0" required>
+          </p>
+        </fieldset>
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Borrar">
+        </p>
+    </form>
+
+    <br><br>
+    <form action="datosControlados.php" method="post">
+        <fieldset>
+          <legend>Envio tipo POST con control en el servidor</legend>  
+          <p>
+            <!-- al usar <label> y que coincida con el id del <input> correspondiente, permite que al hacer click 
+            en el texto del <label>, el cursor se coloque directamente en el campo asociado -->
+            Nombre: <input type="text" name="nombre" size="40">
+          </p>
+          <p>
+            Edad: <input type="number" name="edad" min="0">
+          </p>
+        </fieldset>
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Borrar">
+        </p>
+    </form>
+
+  </main>
+  <footer>
+    <hr>
+    <p>Autor: Naaman Lopez Valera</p>
+  </footer>
+</body>
+
+</html>

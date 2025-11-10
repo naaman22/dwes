@@ -1,0 +1,19 @@
+[
+    {
+        "caratula": "elmarciano.jpg",
+        "titulo": "El Marciano",
+        "autor": "Andy Weir",
+        "generos": [
+            "ciencia-ficcion",
+            "thriller"
+        ]
+    },
+    {
+        "caratula": "mobydick.jpg",
+        "titulo": "Moby Dick",
+        "autor": "Herman Melville",
+        "generos": [
+            "historico"
+        ]
+    }
+]
