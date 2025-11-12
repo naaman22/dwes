@@ -1,8 +1,10 @@
 <?php 
     session_start();
 
-    require_once "../models/basedatos.php";
-    require_once "../models/usuario.php";
+    require __DIR__ . "/../../vendor/autoload.php";
+    use App\models\Basedatos;
+    use App\models\Usuario;
+
     include "./menu.php";
 
     if(!isset($_SESSION["conectado"]) || !$_SESSION["conectado"]){
@@ -14,6 +16,8 @@
     $dbInstancia = Basedatos::getInstance();
     $sql = "SELECT * FROM usuarios";
     $sentencia = $dbInstancia->get_data($sql);
+
+    saludar();
 
 ?>
 

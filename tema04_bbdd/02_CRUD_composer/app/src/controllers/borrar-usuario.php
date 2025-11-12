@@ -1,7 +1,8 @@
 <?php
 
     session_start();
-    require_once "../models/basedatos.php";
+    require __DIR__ . "/../../vendor/autoload.php";
+    use App\models\Basedatos;
 
 
     if($_SERVER["REQUEST_METHOD"] != "POST"){

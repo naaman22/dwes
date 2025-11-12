@@ -4,8 +4,11 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "AlumnosDaw\\App\\": "src/"
-        }
+            "App\\": "src/"
+        },
+        "files": [
+            "src/helpers/funciones.php"
+        ]
     },
     "authors": [
         {
@@ -13,5 +16,8 @@
             "email": "2866006@alu.murciaeduca.es"
         }
     ],
-    "require": {}
+    "require": {
+        "monolog/monolog": "^3.9",
+        "mpdf/mpdf": "^8.2"
+    }
 }

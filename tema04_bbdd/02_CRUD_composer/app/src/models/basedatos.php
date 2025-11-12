@@ -1,10 +1,17 @@
 <?php
-    require_once __DIR__ . "/../config.php";
+    namespace App\models;
 
+    require __DIR__ . "/../../vendor/autoload.php";
+
+    use App\models\Usuario;
+    //require_once __DIR__ . "/../config.php";
+
+    use PDO;
+    use PDOException;
 
     class Basedatos{
 
-        private $conexionPDO;
+        private ?PDO $conexionPDO;
         private static $instancia;
         private $dbmotor;
         private $host;
@@ -14,17 +21,21 @@
 
         //Constructor
         private function __construct(){
-            global $dbMotor;
-            global $mysqlHost;
-            global $mysqlDatabase;
-            global $mysqlUser;
-            global $mysqlPassword;
+            // global $dbMotor;
+            // global $mysqlHost;
+            // global $mysqlDatabase;
+            // global $mysqlUser;
+            // global $mysqlPassword;
 
-            $this->dbmotor = $dbMotor;
-            $this->host = $mysqlHost;
-            $this->database = $mysqlDatabase;
-            $this->username = $mysqlUser;
-            $this->password = $mysqlPassword;
+            //Lo cargamos desde el json
+            $configPath = __DIR__ . '/../config.json';
+            $config = json_decode(file_get_contents($configPath), true);
+
+            $this->dbmotor = $config["dbMotor"];
+            $this->host = $config["mysqlHost"];
+            $this->database = $config["mysqlDatabase"];
+            $this->username = $config["mysqlUser"];
+            $this->password = $config["mysqlPassword"];
 
             $dsn_conbbdd = "$this->dbmotor:host=$this->host;dbname=$this->database;charset=utf8mb4";
             $dsn_sinbbdd = "$this->dbmotor:host=$this->host;charset=utf8mb4";
@@ -52,7 +63,7 @@
         }
         
 
-        public function getConnection(){
+        public function getConnection():PDO | null{
             return $this->conexionPDO;
         }
 

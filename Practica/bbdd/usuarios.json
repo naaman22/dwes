@@ -1,0 +1,45 @@
+[
+    {
+        "nombre": "Pedro",
+        "apellido": "Garcia",
+        "email":"pedropopo@gmai.com",
+        "password": "",
+        "esAdmin": false
+    },
+    {
+        "nombre": "Naaman",
+        "email": "naaman22.lopez@gmail.com",
+        "password": "$2y$10$s.gyIBcmlMc3qeArNjJQcOgmwhKh7BFzLKTyHsYU86MxyLoWxJ6QW",
+        "esAdmin": false
+    },
+    {
+        "nombre": "Naaman",
+        "email": "naaman22.lopez@gmail.com",
+        "password": "$2y$10$POVvTvWAZReDmsuyQsXjH.EJGJjNjD10as.ldKcb7\/NO3fdz1dJYC",
+        "esAdmin": true
+    },
+    {
+        "nombre": "hola",
+        "email": "pene@gmail.com",
+        "password": "$2y$10$LYR5BihmkqE1U1vz.VNDdeA6dllVagf9oBeDqy.eMFnly2psr0SRa",
+        "esAdmin": true
+    },
+    {
+        "nombre": "Naaman",
+        "email": "naaman22.lopez@gmail.com",
+        "password": "$2y$10$I6Juqotdge7WHb\/T3HrcZ.BzrsbLGN7VvE1rx5RGHuOOoknSMYnSq",
+        "esAdmin": true
+    },
+    {
+        "nombre": "Naaman",
+        "email": "danielluispopa116@gmail.com",
+        "password": "$2y$10$vF1SzS.QluyDv6z5MgERYeQ2fT03pGHD3b8ZCDUFZ7yFnokAl9sOa",
+        "esAdmin": true
+    },
+    {
+        "nombre": "Naaman",
+        "email": "lop@a.com",
+        "password": "$2y$10$DTdeptZ4EW8C2IbT.pfX4.QSY7kWWDPrJy3srPMAb8zgeL7vGsPgu",
+        "esAdmin": false
+    }
+]

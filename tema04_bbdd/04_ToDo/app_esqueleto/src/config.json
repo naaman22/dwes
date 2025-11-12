@@ -1,0 +1,8 @@
+{
+    "dbMotor": "mysql",
+    "mysqlHost": "",
+    "mysqlUser": "",
+    "mysqlPassword": "",
+    "mysqlDatabase": ""
+}
+

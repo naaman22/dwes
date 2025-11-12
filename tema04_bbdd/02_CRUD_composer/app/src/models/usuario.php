@@ -1,10 +1,16 @@
 <?php
+    namespace App\models;
+    // require __DIR__ . "/../../vendor/autoload.php";
+
+
+    use JsonSerializable;
+    use DateTime;
      class Usuario implements JsonSerializable {
         private int | null $id;
         private string $nombre;
         private string $apellidos;
         private string $usuario;
-        private string $password;
+        private string | null $password;
         private DateTime $fecha_nac;
 
         public function __construct(int | null $id, string $nombre, string $apellidos, string $usuario, string $passwordCifrado, DateTime $fecha_nac) {

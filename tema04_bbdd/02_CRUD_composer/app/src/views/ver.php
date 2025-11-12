@@ -1,8 +1,9 @@
 <?php 
     session_start();
 
-    require_once "../models/basedatos.php";
-    require_once "../models/usuario.php";
+    require __DIR__ . "/../../vendor/autoload.php";
+    use App\models\Basedatos;
+    use App\models\Usuario;
 
 
     if(!isset($_SESSION["conectado"]) || !$_SESSION["conectado"]){
