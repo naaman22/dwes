@@ -71,6 +71,40 @@ class Basedatos{
         }
     }
 
+    public function completar_tarea(int $_id){
+        $sql = "UPDATE tareas SET completada = TRUE WHERE id=:id";
+        $id = $_id;
+
+        try {
+            $sentencia = $this->conexionPDO->prepare($sql);
+            $sentencia -> bindParam(":id", $id);
+            $sentencia->execute();
+            return true;
+        } catch (PDOException $e) {
+            $this->log->error("Error en COMPLETAR tarea");
+            $this->log->error($e->getMessage(), ["archivo:" => "basedatos.php"]);
+            return false;
+        }
+
+    }
+
+    public function borrar_tarea(int $_id){
+        $sql = "DELETE FROM tareas WHERE id=:id";
+        $id = $_id;
+
+        try {
+            $sentencia = $this->conexionPDO->prepare($sql);
+            $sentencia -> bindParam(":id", $id);
+            $sentencia->execute();
+            return true;
+        } catch (PDOException $e) {
+            $this->log->error("Error en COMPLETAR tarea");
+            $this->log->error($e->getMessage(), ["archivo:" => "basedatos.php"]);
+            return false;
+        }
+
+    }
+
     
 }
 
