@@ -1,10 +1,19 @@
 <?php 
     session_start();
-    require __DIR__ - '/../../vendor/autoload.php';
+    require __DIR__ . '/../../vendor/autoload.php';
     use App\models\Basedatos;
     use App\models\Tarea;
 
 
+    if(!$_SESSION["conectado"]){
+        header("location: ../../public/index.php");
+        die;
+    }
+
+    $db = new Basedatos();
+
+    $sql = "SELECT * FROM tareas";
+    $sentencia = $db->get_data($sql);
     
 ?>
 <!DOCTYPE html>
@@ -18,14 +27,22 @@
 <body>
     <h1>LISTADO DE TAREAS</h1>
 
-    <form action="PARA AÑADIR LA TAREA" method="POST" class="form-add">
+    <form action="../controllers/add_tarea.php" method="POST" class="form-add">
         <input type="text" name="descripcion" placeholder="Nueva tarea..." required>
         <button type="submit">Añadir</button>
     </form>
 
     <ul class="task-list">
+        <?php 
+            while($registro = $sentencia->fetch(PDO::FETCH_OBJ)):
+                $t = new Tarea($registro->id, $registro->descripcion, $registro->completada);
+
+                $t->fecha_creacion = new DateTime($registro->fecha_creacion);                
+
+        ?>
         <li class="<?= $t->completada ? 'done' : '' ?>">
             <?= ($t->descripcion) ?>
+            <?= ($t->fecha_creacion->format("d/m/Y")) ?>
 
             <?php if (!$t->completada): ?>
                 <form action="PARA COMPLETAR LA TAREA" method="POST" class="inline">
@@ -39,7 +56,9 @@
                 <button type="submit">🗑️</button>
             </form>
         </li>
-   
+        <?php 
+            endwhile;
+        ?>
     </ul>
     
 </body>

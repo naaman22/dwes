@@ -60,6 +60,17 @@ class Basedatos{
         }
     }
 
+    public function ejecutar(string $sql, array $parametros = []): bool {
+        try {
+            $sentencia = $this->conexionPDO->prepare($sql);
+            return $sentencia->execute($parametros);
+        } catch (PDOException $e) {
+            $this->log->error("Error en EJECUTAR");
+            $this->log->error($e->getMessage(), ["archivo:" => "basedatos.php"]);
+            return false;
+        }
+    }
+
     
 }
 

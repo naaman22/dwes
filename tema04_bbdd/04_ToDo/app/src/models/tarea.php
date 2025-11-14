@@ -25,8 +25,7 @@
         public function getDescripcion(){
             return $this->descripcion;
         }
-
-        public function getComp
+ 
 
 
 
